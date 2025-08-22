@@ -1,0 +1,139 @@
+<div class="calculator-container">
+    <h1>Home Seller Net Proceeds Calculator</h1>
+    
+    <div class="input-section">
+        <div class="input-group">
+            <h3>Property Information</h3>
+            <div class="form-row">
+                <label>Sale Price:</label>
+                <input type="number" id="salePrice" value="500000" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Current Mortgage Balance:</label>
+                <input type="number" id="mortgageBalance" value="300000" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Other Liens/Debts:</label>
+                <input type="number" id="otherLiens" value="0" oninput="calculateProceeds()">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <h3>Commission Rates</h3>
+            <div class="form-row">
+                <label>Traditional Commission (%):</label>
+                <input type="number" id="traditionalCommission" value="6" step="0.1" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Low-Fee Commission (%):</label>
+                <input type="number" id="lowFeeCommission" value="1.5" step="0.1" oninput="calculateProceeds()">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <h3>Taxes & Recording Fees</h3>
+            <div class="form-row">
+                <label>Transfer Tax (%):</label>
+                <input type="number" id="transferTax" value="0.5" step="0.1" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Recording Fees ($):</label>
+                <input type="number" id="recordingFees" value="150" oninput="calculateProceeds()">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <h3>Settlement & Title Costs</h3>
+            <div class="form-row">
+                <label>Title Insurance ($):</label>
+                <input type="number" id="titleInsurance" value="800" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Escrow/Settlement Fee ($):</label>
+                <input type="number" id="settlementFee" value="500" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Attorney Fees ($):</label>
+                <input type="number" id="attorneyFees" value="750" oninput="calculateProceeds()">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <h3>HOA & Condo Fees</h3>
+            <div class="form-row">
+                <label>Resale Package ($):</label>
+                <input type="number" id="resalePackage" value="200" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>HOA Prorations ($):</label>
+                <input type="number" id="hoaProrations" value="300" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Move-out Fees ($):</label>
+                <input type="number" id="moveOutFees" value="150" oninput="calculateProceeds()">
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <h3>Additional Costs</h3>
+            <div class="form-row">
+                <label>Pre-listing Preparation ($):</label>
+                <input type="number" id="prepCosts" value="2000" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Credits & Concessions ($):</label>
+                <input type="number" id="creditsAndConcessions" value="1500" oninput="calculateProceeds()">
+            </div>
+            <div class="form-row">
+                <label>Other Costs ($):</label>
+                <input type="number" id="otherCosts" value="0" oninput="calculateProceeds()">
+            </div>
+        </div>
+    </div>
+    
+    <div class="results-section">
+        <div class="result-card">
+            <h4>Traditional Commission Net</h4>
+            <p class="amount" id="traditionalNet">$0</p>
+        </div>
+        <div class="result-card">
+            <h4>Low-Fee Commission Net</h4>
+            <p class="amount" id="lowFeeNet">$0</p>
+        </div>
+        <div class="result-card savings">
+            <h4>Your Savings</h4>
+            <p class="amount" id="savings">$0</p>
+        </div>
+    </div>
+    
+    <div class="breakdown-section">
+        <div class="breakdown-table">
+            <h4>Traditional Commission Breakdown</h4>
+            <table>
+                <tbody id="traditionalBreakdown">
+                </tbody>
+            </table>
+        </div>
+        <div class="breakdown-table">
+            <h4>Low-Fee Commission Breakdown</h4>
+            <table>
+                <tbody id="lowFeeBreakdown">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="instructions">
+    <h3>Instructions & Notes</h3>
+    <ul>
+        <li><strong>Sale Price:</strong> Enter the expected or agreed-upon sale price of your home</li>
+        <li><strong>Commission Rates:</strong> Traditional rates typically range from 5-6%, while low-fee services often charge 1.5-2.5%</li>
+        <li><strong>Transfer Tax:</strong> Varies by state/locality. Common rates are 0.1% to 1.5% of sale price</li>
+        <li><strong>Title & Settlement:</strong> These are typical flat fees that vary by region and property value</li>
+        <li><strong>HOA Fees:</strong> Include any condo/HOA-related costs like resale packages, prorations, and move-out fees</li>
+        <li><strong>Preparation Costs:</strong> Include staging, repairs, cleaning, photography, and other pre-listing expenses</li>
+        <li><strong>Credits & Concessions:</strong> Any buyer credits, repair allowances, or closing cost assistance</li>
+        <li>All calculations are estimates. Actual costs may vary based on your specific situation and local market conditions</li>
+    </ul>
+</div>
